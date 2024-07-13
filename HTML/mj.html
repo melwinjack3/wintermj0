@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <title>MJ GAME</title>
+    <link rel="stylesheet" href="mj.css">
+</head>
+<body>
+    <center>
+        <h2>Let's Play a Game</h2>
+        <h3> Enter a value (0 -10) </h3>
+        <h5>If the vaule is equal to system decteted value then you won</h5>
+        <input id="in" type="number"  min="0" max="10" placeholder="Enter a number">
+        <button onclick="fun()" >Check</button>
+        <p id="p1">you won/loss</p>
+        <h4 id="h41">your score : 10</h4>
+        <creator>Creator - MJ</creator>
+    </center>
+</body>
+</html>
+
+<script>
+    var b1=document.getElementById("p1")
+    var u41=document.getElementById("h41")
+    var ip=document.getElementById("in")
+    var f=Math.floor(Math.random()*10)+1
+    var min =10
+    function fun(){
+        var inn=Number(ip.value)
+        if(inn==f){
+            b1.textContent="you won"
+            alert("CONGRATES...")
+        }
+        else{
+            var mmm=0
+            if(min>mmm){
+                --min
+                u41.textContent="your score : "+min
+                b1.textContent="you loss"
+            }
+            else{
+                b1.textContent="you loss...try again"
+                function de(d){
+                    setTimeout(
+                        function(){
+                            location.reload()
+                        }, d)
+                }
+                de(1000);
+                alert("Click OK to Restart")
+            }
+        }
+    }
+</script>
